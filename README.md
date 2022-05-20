@@ -1,7 +1,7 @@
 # Navtyl
 A fork of Bastardkb Skeletyl by Wimads, adding an adafruit 5-way navigation switch on each side of the keyboard.
 
-* Switches were wired to the Skeletyl PCB available from https://bastardkb.com/
+* Switches are wired to the Skeletyl PCB available from https://bastardkb.com/
 * You need 10x extra 1N4148 diodes in addition to the normal required components for the Skeletyl
 * You need 2x adafruit 5-way navigation switches
 * Wiring instructions can be found below
