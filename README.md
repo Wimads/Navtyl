@@ -1,117 +1,41 @@
-# Skeletyl
+# Navtyl
+A fork of Bastardkb Skeletyl by Wimads, adding an adafruit 5-way navigation switch on each side of the keyboard.
 
-Compact and silent Dactyl-like keyboard for ergo lovers.
+* Switches were wired to the Skeletyl PCB available from https://bastardkb.com/
+* You need 10x extra 1N4148 diodes in addition to the normal required components for the Skeletyl
+* You need 2x adafruit 5-way navigation switches
+* Wiring instructions can be found below
+* Navtyl firmware files have been modified from Bastardkb Skeletyl and Scylla firmware to accomodate the 5-way switches.
+* Default keymap is only there as a template for your own development, not functional for actual daily use.
 
-![](pics/c1.jpg)
-*picture: trekdemow*
+* Physical placement of switches on the case needs further development, my own modification was not adequate. So you will need to modify the Skelety case design yourself. 3D model can be obtained from https://github.com/Bastardkb/ - tip: placement of the switch should be in normal upright position to be operable.
 
-# Sourcing the components
+# Wiring instructions
+* For the full Skeletyl build guide, visit: https://docs.bastardkb.com/hc/en-us/sections/4415744661394-Scylla-TBK-Mini-Skeletyl
+* Before soldering the ribbon cable, first consult the instructions below! Since the nav-switches will be wired to the same connections on the PCB.
 
-## Electronic components
+The skeletyl PCB has 2 unused connections on the ribbon cables marked X on the PCB. These connections are used on the Skylla for the extra row and column that the Skeletyl doesn't have. Navtyl utilizes the extra row connection to wire the common pin of the 5 way switches. So effectively, the 5 way switches are wired like an extra number row on top of the Skeletyl. For this you want to use the upper of the two connections marked X on the PCB (the bottom X is the extra column of the Skylla, which we won't use).
 
-You will need to order the parts from a shop, and order some PCBs directly from the manufacturer.
+![Row 0 for nav-switch](https://user-images.githubusercontent.com/50098220/169521660-891987db-34df-4b19-94d7-7b0e669643b3.jpg)
 
-Parts list:
+So common pin of the switch goes to upper X, the other five pins will be wired to the connections for the columns, marked C2-C5. There is 2 connections for C2, C4 and C5. It doesn't matter which you use.
 
-| Part name                         | Amount | Link                                                                                    |
-| --------------------------------- | ------ | --------------------------------------------------------------------------------------- |
-| Flexible PCB for the plate   | 2     | https://github.com/Bastardkb/Skeletyl-PCB-plate                                                        |
-| Flexible PCB for the thumbs   | 2     | https://github.com/Bastardkb/TBK-Mini-PCB-thumb-cluster                                                    |
-| Elite-C                           | 2      |                                                                                         |
-| Elite-C adapter PCB V1.4          | 2      | https://github.com/Bastardkb/Elite-C-holder                                             |
-| SOD123 Diodes                     | 36     |                                                                                         |
-| Ribbon cables Flexstrip           | 34     | Farnell, Aliexpress                                                                        |
-| M4 8mm Torx Screw                 | 12     | Conrad                                                                                  |
-| M4 screw insert, M4 X D6.0 X L5.0 | 12     | https://fr.aliexpress.com/item/4000232925592.html?spm=a2g0s.12269583.0.0.6aef4f282LZO4v |
-| Audio jack, SMD                   | 2      |                                                                                         |
-| Button, 4x4x1.5                   | 2      | https://www.aliexpress.com/item/1005001304569553.html?spm=a2g0s.9042311.0.0.27424c4dDwgcp7 |
+While soldering the ribbon cable, add a wire for the common pin to the upper X, and add one diode for column C2-C5 - the black ring on the diode should be on the PCB side. Once the ribbon is soldered, it is very difficult to add the diode afterwards, so it is best to solder the diodes and ribbon cable in one go (insert both ribbon and diode in the hole and then solder). Cut the wires of the diodes as short as possible, so risk of short circuit is limited.  Make sure the ribbon and diodes are on the same side of the PCB as the smd diodes.
 
-If you want RGB, you will also need:
+![Diodes](https://user-images.githubusercontent.com/50098220/169526072-e6ff0874-a087-404f-9bef-0391ffe4891d.jpg)
 
-| Part name               | Amount | Format                                |
-| ----------------------- | ------ | ------------------------------------- |
-| SK6812 Mini-E LEDs      | 36     |                                       |
-| Capacitor, 1uF          | 4      | 1206                                  |
-| Resistor, 330Ohms       | 4      | 1206                                  |
-| Wires                   |        | 28 AWG recommended, Black, Red, Color |
-| Ribbon cables Flexstrip | 6      |                                       |
+The columns should be wired in the following order to the switch pins:
 
-## Print the case
+![Diagram nav switch](https://user-images.githubusercontent.com/50098220/169538545-514d66a2-1c37-4199-801d-7408fbd5d218.jpg)
 
-The STL, STEP and Fusion files are included in this Github.
-Feel free to modify them at length. The files are on a non-commercial license, so this is for personal projects only - please do not use those to sell them.
+It is not critical if you wire the columns in a different order, you will just need to remap the order of the keys in the firmware (navtyl.h, k00-k04, k50-k54) accordingly - but do make absolutely sure you wire the common pin correctly.
 
-Please find detailed instructions on how to print the case here:
-https://docs.bastardkb.com/hc/en-us/articles/360020031180-Print-settings-for-Dactyls
-
-There is also a version that uses a blackpill with its shield PCB, in the `V3/blackpill` folder. The position of the audio jack and usb-c holes are slightly different.
-
-## Print the tents
-
-Optionally, you can print 30 degree tents. Those are removable and attached with screws, and also come with an optional bottom plate.
-
-The tents come in 2 versions: normal, and organic. The organic one provides a sleeker skeleton-style look with a side holder for the shield pcb, but is longer and harder to print.
+Once you soldered the diodes and the ribbons, continue the Skeletyl build guide as normal.
 
 
-| Front view               | Side view           |
-| ----------------- | ------------------ |
-| ![](pics/tent1.jpg) | ![](pics/tent2.jpg) |
-
-## Get a kit from BastardKB
-
-You can get a full Kit, including case and all PCBs and electronics required on the shop:
-https://bastardkb.com/
-
-If you want to print the case yourself, you can also get just the electronics Kit.
-
-# Build guide
-
-Please find detailed build instructions here:
-https://docs.bastardkb.com/hc/en-us/articles/360020031340-Kit-contents-and-required-tools
-
-This is for the 6x3, but it will work for this keyboard as well.
-
-# Finding help
-
-- Discord: https://bastardkb.com/discord
-- Website: https://bastardkb.com/
-- Docs: https://docs.bastardkb.com
-
-# Forks
-
-- [Reinforced, increased pinky stagger](https://github.com/dereknheiley/Skeleton-Dactyl-Mini)
 
 
-# Mods
-## Chair mount plate  
-Alternate bottom plate for mounting to a chair or desk using standard camera mounting equipment. Fits 1/4 inch mounting bolt (1/4-20 UNC).  
-  
-![](pics/chairMount.png)
-
-# Support me on Patreon
-
-If you like the keyboard, please consider helping me with Patreon: https://www.patreon.com/bastardkb
-
-I post regular updates and hindsight on my work. I work full time on keyboard innovation, and this helps a lot !
 
 
-# License 
 
-This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 
-# Versions
-
-V1:
-
-- original version
-
-V2:
-
-- smoother
-- Compatible with amoebas and flexible pcbs
-- more screws !
-
-V3:
-
-- better stronger screw inserts (added aliexpress link in readme)
-- switch to adapter V1.4
