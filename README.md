@@ -8,7 +8,12 @@ A fork of Bastardkb Skeletyl by Wimads, adding an adafruit 5-way navigation swit
 * Navtyl firmware files have been modified from Bastardkb Skeletyl and Scylla firmware to accomodate the 5-way switches.
 * Default keymap is only there as a template for your own development, not functional for actual daily use.
 
-* Physical placement of switches on the case needs further development, my own modification was not adequate. So you will need to modify the Skelety case design yourself. 3D model can be obtained from https://github.com/Bastardkb/ - tip: placement of the switch should be in normal upright position to be operable.
+* Physical placement of switches on the case needs further development, my own modification was not adequate. So you will need to modify the Skelety case design yourself. 3D model can be obtained from https://github.com/Bastardkb/ 
+  * tip: placement of the switch should be in normal upright position to be operable. Vertical placement as pictured below is not recommended, because switch is too heavy to operate without moving the board in this position:
+
+
+![Navtyl](https://user-images.githubusercontent.com/50098220/169543136-5a5a46fe-10f9-481b-8601-ecff62ed759e.jpg)
+
 
 # Wiring instructions
 * For the full Skeletyl build guide, visit: https://docs.bastardkb.com/hc/en-us/sections/4415744661394-Scylla-TBK-Mini-Skeletyl
