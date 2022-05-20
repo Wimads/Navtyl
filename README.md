@@ -1,6 +1,6 @@
 # Navtyl
 A fork of Bastardkb Skeletyl by Wimads, adding an adafruit 5-way navigation switch on each side of the keyboard. 
-This repository only contains instructions and firmware files. For the the original skeletyl 3D CAD/KiCAD/etc. files, go to bastardkb/skeletyl
+This repository only contains instructions and firmware files. For the the original skeletyl 3D CAD/KiCAD/etc. files, go to https://github.com/Bastardkb/Skeletyl
 
 * Nav-switches are wired to the Skeletyl PCB available from https://bastardkb.com/
 * You need 10x extra 1N4148 diodes in addition to the normal required components for the Skeletyl
@@ -9,7 +9,7 @@ This repository only contains instructions and firmware files. For the the origi
 * Navtyl firmware files have been modified from Bastardkb Skeletyl and Scylla firmware to accomodate the 5-way switches.
 * Default keymap is only there as a template for your own development, not functional for actual daily use.
 
-* Physical placement of switches on the case needs further development, my own modification was not adequate. So you will need to modify the Skelety case design yourself. 3D model can be obtained from https://github.com/Bastardkb/ 
+* Physical placement of switches on the case needs further development, my own modification was not adequate. So you will need to modify the Skelety case design yourself. 3D model can be obtained from https://github.com/Bastardkb/Skeletyl 
   * tip: placement of the switch should be in normal upright position to be operable. Vertical placement as pictured below is not recommended, because switch is too heavy to operate without moving the board in this position:
 
 
@@ -20,7 +20,7 @@ This repository only contains instructions and firmware files. For the the origi
 * For the full Skeletyl build guide, visit: https://docs.bastardkb.com/hc/en-us/sections/4415744661394-Scylla-TBK-Mini-Skeletyl
 * Before soldering the ribbon cable, first consult the instructions below! Since the nav-switches will be wired to the same connections on the PCB.
 
-The skeletyl PCB has 2 unused connections on the ribbon cables marked X on the PCB. These connections are used on the Skylla for the extra row and column that the Skeletyl doesn't have. Navtyl utilizes the extra row connection to wire the common pin of the 5 way switches. So effectively, the 5 way switches are wired like an extra number row on top of the Skeletyl. For this you want to use the upper of the two connections marked X on the PCB (the bottom X is the extra column of the Skylla, which we won't use).
+The skeletyl PCB has 2 unused connections on the ribbon cables marked X on the PCB. These connections are used on the Skylla for the extra row and column that the Skeletyl doesn't have. Navtyl utilizes the extra row connection to wire the common pin of the 5 way switches. So effectively, the 5 way switches are wired like an extra number row on top of the Skeletyl. For this you want to use the upper of the two connections marked X on the PCB (the bottom X is the extra column of the Scylla, which we won't use).
 
 ![Row 0 for nav-switch](https://user-images.githubusercontent.com/50098220/169521660-891987db-34df-4b19-94d7-7b0e669643b3.jpg)
 
